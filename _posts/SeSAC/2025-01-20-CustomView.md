@@ -95,3 +95,4 @@ override func viewDidLoad() {
 - loadView에서 self.view를 mainView로 할당하면서 둘은 동일한 객체를 참조하게 된다.
   - (view.backgroundColor = .blue) == (mainView.backgroundColor = .blue)로 같은 결과가 된다.
 - 결과적으로 배경색은 파란색으로 설정된다.
+
