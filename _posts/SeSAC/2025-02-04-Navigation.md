@@ -11,9 +11,9 @@ last_modified_at: 2025-02-04T13:10:02-05:00
 
 # NavigationController와 TabBarController의 관계
 
-**직렬적으로 화면 전환이 이루어지던 navigationController에 tabbarController가 들어가게되면 어떻게 될까?**
+**직렬적으로 화면 전환이 이루어지던 `NavigationController`에 `TabbarController`가 들어가게되면 어떻게 될까?**
 
-<br><br>
+<br>
 
 ## Container View Controller
 뷰 컨트롤러를 관리하는 뷰 컨트롤러로서, 여러 뷰 컨트롤러 사이에서 화면전환을 담당한다. <br>
@@ -77,6 +77,8 @@ viewDidLoad는 navigationController와 무관하게 viewController가 view를 �
 
 <img width="423" alt="Image" src="https://github.com/user-attachments/assets/c15ab7dc-5e0e-41fc-b247-74b352eb11dd" />
 <br><br>
-tabbarController의 viewWillAppear는 자식 뷰 컨트롤러인 secondVC가 화면에 나타날 준비가 되었을 떄 호출된다.<br>
+tabbarController의 viewWillAppear는 자식 뷰 컨트롤러인 secondVC가 화면에 나타날 준비가 되었을 때 호출된다.<br>
 secondVC가 로드되고 tabbarController가 navigationController와 연결되면서,<br>
 tabbarController의 자식인 secondVC도 navigationController에 연결되어서 viewWillAppear 시점에서야 navigationController를 확인할 수 있게 된다.
+<br><br>
+- 전체 코드 : https://github.com/jannchoi/TestForSwift/tree/main/TestNavigation

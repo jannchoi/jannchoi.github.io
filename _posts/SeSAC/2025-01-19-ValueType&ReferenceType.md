@@ -11,7 +11,7 @@ last_modified_at: 2025-01-19T13:40:02-05:00
 
 # Value Type과 Reference Type을 구조체와 클래스로 설명
 
-값타입과 참조타입의 대표 에시인 구조체와 클래스로 설명해 보겠다.<br>
+값타입과 참조타입의 대표 예시인 구조체와 클래스로 설명해 보겠다.<br>
 
 ![Image](https://github.com/user-attachments/assets/d9c20440-2825-4d90-b84c-3a4bf5e8f1a1)
 <br>
