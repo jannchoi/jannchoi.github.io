@@ -9,6 +9,8 @@ tags:
 last_modified_at: 2025-02-04T13:10:02-05:00
 ---
 
+# NavigationController와 TabBarController의 관계
+
 **직렬적으로 화면 전환이 이루어지던 navigationController에 tabbarController가 들어가게되면 어떻게 될까?**
 
 <br><br>
@@ -58,6 +60,7 @@ let secondTab = UINavigationController(rootViewController: SecondViewController(
 <br>
 - TabBarController에서 독립적인 UINavigationController를 만들었기 때문에 두 개의 navigationStack이 생성된다.
 - 각각의 navigationStack에 FirstVC, FourthVC가 push되는 것을 알 수 있다.
+<br><br>
 
 ##  UITabBarController 내부의 viewControllers는 초기에는 navigationController가 없다?!
 위 두 가지 실험 중 각 뷰 컨트롤러의 viewDidLoad와 viewWillAppear에 print(self.navigationController)를 출력해보았다.<br>
@@ -65,7 +68,7 @@ RootVC에서 tabbarController로 push되는 경우에만, tabbarController의 �
  viewWillAppear시점에 정상적으로 navigationController가 출력되었다.<br>
 
 <img width="405" alt="Image" src="https://github.com/user-attachments/assets/b2742a18-9d2a-449d-a417-49c34ef73f49" />
-<br>
+<br><br>
 viewDidLoad는 navigationController와 무관하게 viewController가 view를 참조할 때 호출된다.<br>
 그래서 viewDidLoad시점에 해당 viewController가 navigationStack에 push되었다는 보장이 없다.<br>
 <br>
@@ -73,4 +76,7 @@ viewDidLoad는 navigationController와 무관하게 viewController가 view를 �
 **왜 다른 viewControllers와는 다르게 tabbarController가 push될 때 navigationController의 연결 시점이 늦는 것일까?**
 
 <img width="423" alt="Image" src="https://github.com/user-attachments/assets/c15ab7dc-5e0e-41fc-b247-74b352eb11dd" />
-<br>
+<br><br>
+tabbarController의 viewWillAppear는 자식 뷰 컨트롤러인 secondVC가 화면에 나타날 준비가 되었을 떄 호출된다.<br>
+secondVC가 로드되고 tabbarController가 navigationController와 연결되면서,<br>
+tabbarController의 자식인 secondVC도 navigationController에 연결되어서 viewWillAppear 시점에서야 navigationController를 확인할 수 있게 된다.
