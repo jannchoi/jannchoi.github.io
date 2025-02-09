@@ -6,7 +6,7 @@ categories:
   - iOS
 tags:
   - iOS
-last_modified_at: 2025-02-09T05:40:02-05:00
+last_modified_at: 2025-02-09T13:40:02-05:00
 ---
 
 # 클로저를 통한 역값전달
