@@ -39,6 +39,27 @@ Observable의 한계를 극복하기 위해 나타난 것.<br>
 - Observable처럼 데이터를 방출할 수도 있지만, Observer처럼 이벤트를 전달할 수도 있다. 
 - 여러 구독자가 동일한 데이터를 받을 수 있다.
 
+```swift
+let sampleInt = BehaviorSubject(value: 0) 
+sampleInt.onNext(Int.random(in: 1...100)) 
+
+sampleInt.subscribe {
+    value in
+    print("1", "\(value)") // 1 42
+}.disposed(by: disposeBag)
+
+sampleInt.subscribe {
+    value in
+    print("2", "\(value)") // 2 42
+}.disposed(by: disposeBag)
+
+sampleInt.subscribe {
+    value in
+    print("3", "\(value)") // 3 42
+}.disposed(by: disposeBag)
+```
+- 각 구독자는 동일한 값을 받아 출력된다. 
+
 ### Subject의 종류
 
 #### PublishSubject
