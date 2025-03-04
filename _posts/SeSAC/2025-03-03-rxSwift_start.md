@@ -6,11 +6,11 @@ categories:
   - iOS
 tags:
   - iOS
-last_modified_at: 2025-03-04T07:40:02-05:00
+last_modified_at: 2025-03-03T07:40:02-05:00
 ---
 
 # RXSwift 필요성 느끼기
-rxSwift가 가장 필요한 순간은 비동기적 이벤트가 일어날 떄이다.<br>
+rxSwift가 가장 필요한 순간은 비동기적 이벤트가 일어날 때이다.<br>
 비동기와 관련된 여러 작업, Closure, GCD, Delegate, Notification Center를 떠올려 보자.<br>
 - **Closure** : 작업이 끝나면 호출되어 그 결과를 처리.
 - **GCD**: 특정 작업을 백그라운드에서 실행하고 결과를 메인 스레드에서 처리.
